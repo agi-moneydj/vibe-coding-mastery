@@ -1,6 +1,7 @@
 import { defineConfig } from 'vitepress'
+import { withMermaid } from 'vitepress-plugin-mermaid'
 
-export default defineConfig({
+export default withMermaid(defineConfig({
   title: 'Vibe Coding 精通指南',
   description: '《Vibe Coding: Building Production-Grade Software with AI》逐章精通指南 — 專為有 AI 輔助開發經驗的 RD 打造',
   base: '/vibe-coding-mastery/',
@@ -60,6 +61,13 @@ export default defineConfig({
         ]
       },
       {
+        text: '全角色轉型指南',
+        collapsed: false,
+        items: [
+          { text: '⭐ Vibe Coding 如何改變你的工作', link: '/role-transformation-guide' },
+        ]
+      },
+      {
         text: '附錄',
         collapsed: true,
         items: [
@@ -92,5 +100,9 @@ export default defineConfig({
     socialLinks: [
       { icon: 'github', link: 'https://github.com' }
     ]
-  }
-})
+  },
+
+  mermaid: {
+    theme: 'default',
+  },
+}))
